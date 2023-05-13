@@ -54,7 +54,7 @@ export const signin = async (req, res) => {
       if (isMatch) {
         const token = loginUser.genrateToken();
         res.cookie("jwt", token, {
-          // httpOnly: true,
+          httpOnly: true,
           secure: true,
         });
         return res.status(200).json(loginUser);
